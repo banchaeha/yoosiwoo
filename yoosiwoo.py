@@ -2,13 +2,6 @@ import streamlit as st
 import google.generativeai as genai
 import os
 
-# 여기에 발급받은 API 키를 직접 입력하세요.
-genai.configure(api_key="GEMINI_API_KEY")
-
-import streamlit as st
-import google.generativeai as genai
-import os
-
 # API 키를 Secrets에서 불러옵니다.
 gemini_api_key = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=gemini_api_key)
@@ -113,5 +106,6 @@ if prompt:
             with open('conversation.txt', 'a', encoding='utf-8') as f:
                 f.write(f"채하: {prompt}\n")
                 f.write("시우: 시우가 진정 하고 있습니다.\n")
+
 
 
